@@ -1,3 +1,4 @@
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -7,8 +8,8 @@ public class WebTest {
     private WebDriver driver;
 
     @BeforeAll
-    static void setUpAll() {
-        System.setProperty("webdriver.chrome.driver", "driver/win64/chromedriver.exe");
+    public static void setupAll() {
+        WebDriverManager.chromedriver().setup();
     }
 
     @BeforeEach
